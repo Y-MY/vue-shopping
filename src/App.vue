@@ -1,28 +1,42 @@
 <template>
-  <div>
-    <my-header></my-header>
-    <div class="content">
-      <!--<router-view/>-->
-      111
-    </div>
-    <my-footer></my-footer>
+  <div style="height: 100%">
+    <el-container>
+      <el-header>
+        <my-header></my-header>
+      </el-header>
+      <el-main>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </el-main>
+      <el-footer>
+        <my-footer></my-footer>
+      </el-footer>
+    </el-container>
   </div>
 
 </template>
 
 <script>
-  import MyHeader from './components/layout/MyHeader.vue';
-  import MyFooter from './components/layout/MyFooter.vue';
+  import MyHeader from './components/MyHeader.vue';
+  import MyFooter from './components/MyFooter.vue';
 
   export default {
     name: 'App',
-    components: {MyHeader,MyFooter},
+    components: {MyHeader, MyFooter},
   }
 </script>
 
 <style lang="less" rel="stylesheet/less">
   @import './less/common.less';
-  .content{
-    margin:50px 0;
+  @import './less/default.less';
+
+  .el-header {
+    height: @head-height !important;
+    line-height: @head-height;
+  }
+
+  .el-footer, .el-header {
+    padding: 0;
   }
 </style>
