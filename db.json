@@ -1,0 +1,75 @@
+{
+  "getNewsList": [
+    {
+      "id": 1,
+      "title": "新闻条目1新闻条目1新闻条目1新闻条目1",
+      "url": "http://starcraft.com"
+    },
+    {
+      "id": 2,
+      "title": "新闻条目2新闻条目2新闻条目2新闻条目2",
+      "url": "http://warcraft.com"
+    },
+    {
+      "id": 3,
+      "title": "新闻条3新闻条3新闻条3",
+      "url": "http://overwatch.com"
+    },
+    {
+      "id": 4,
+      "title": "新闻条4广告发布",
+      "url": "http://hearstone.com"
+    },
+    {
+      "userId": 123,
+      "id": 5
+    },
+    {
+      "userId": 123,
+      "id": 6
+    },
+    {
+      "userId": 123,
+      "id": 7
+    },
+    {
+      "userId": 123,
+      "id": 8
+    }
+  ],
+  "getNewList": [
+    {
+      "id": 1,
+      "title": "法国:无信息证明新冠病毒与武汉病毒研究所存在联系",
+      "url": "https://world.huanqiu.com/article/3ytCNEDdguo"
+    },
+    {
+      "id": 2,
+      "title": "炸锅！福建一男深夜醉酒，几分钟微信群狂发1万多元红包！结果……",
+      "url": "http://baijiahao.baidu.com/s?id=1671084142096871184"
+    },
+    {
+      "id": 3,
+      "title": "教育部：对企图冒名顶替新生坚决取消入学资格并严肃处理",
+      "url": "https://3w.huanqiu.com/a/243be7/3yt0JOd13g0?agt=8"
+    },
+    {
+      "id": 4,
+      "title": "老干妈在与腾讯的“萝卜章”案件中需要担责吗？律师解答",
+      "url": "http://baijiahao.baidu.com/s?id=1671011384877187327"
+    }
+  ],
+  "login": {
+    "nickname": "INFINITE",
+    "userId": 123123
+  },
+  "getPrice": {
+    "amount": 678
+  },
+  "createOrder": {
+    "orderId": "6djk979"
+  },
+  "getOrderList": {
+    "userId": 123
+  }
+}

@@ -1,25 +1,19 @@
 <template>
   <div style="height: 100%">
-    <el-container>
-      <el-header>
-        <my-header></my-header>
-      </el-header>
-      <el-main>
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
-      </el-main>
-      <el-footer>
-        <my-footer></my-footer>
-      </el-footer>
-    </el-container>
+    <my-header></my-header>
+    <div class="clear-position"></div>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    <div></div>
+    <my-footer></my-footer>
   </div>
 
 </template>
 
 <script>
-  import MyHeader from './components/MyHeader.vue';
-  import MyFooter from './components/MyFooter.vue';
+  import MyHeader from './components/myHeader.vue';
+  import MyFooter from './components/myFooter.vue';
 
   export default {
     name: 'App',
@@ -30,6 +24,11 @@
 <style lang="less" rel="stylesheet/less">
   @import './less/common.less';
   @import './less/default.less';
+
+  .clear-position {
+    height: @head-height;
+
+  }
 
   .el-header {
     height: @head-height !important;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding: 20px 0;">
     <div v-for="product in productList">
       <h3>{{ product.title}}</h3>
       <ul>
@@ -8,13 +8,14 @@
           <span v-if="item.hot" class="hot-tag">HOT</span>
         </li>
       </ul>
-      <div v-if="!product.last" class="hr"></div>
+      <div v-if="product.noLast" class="hr"></div>
     </div>
   </div>
 </template>
 
 <script>
   import {productList} from './data';
+
   export default {
     data() {
       return {
@@ -24,28 +25,32 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
-  .index-left-block h2 {
-    background: #4fc08d;
-    color: #fff;
-    padding: 10px 15px;
-    margin-bottom: 20px;
+  .index-left-block {
+    .hr {
+      margin-bottom: 20px;
+      border-top: 1px solid #ccc;
+    }
+    h2 {
+      background: #4fc08d;
+      color: #fff;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      padding: 0 15px 5px 15px;
+      font-weight: bold;
+      color: #222;
+    }
+    ul {
+      padding: 10px 15px;
+    }
+    li {
+      padding: 10px 5px;
+    }
   }
 
-  .index-left-block h3 {
-    padding: 0 15px 5px 15px;
-    font-weight: bold;
-    color: #222;
-  }
-
-  .index-left-block ul {
-    padding: 10px 15px;
-  }
-
-  .index-left-block li {
-    padding: 5px;
-  }
 
   .index-board-item h2 {
     font-size: 18px;
@@ -57,6 +62,9 @@
   .hot-tag {
     background: red;
     color: #fff;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-size: 10px;
   }
 
 </style>
