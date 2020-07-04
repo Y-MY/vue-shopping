@@ -18,7 +18,7 @@
           <!-- <img src="../assets/header.jpg" class="headerImage">-->
           <el-dropdown @command="handleCommand">
             <div>
-              <el-avatar src="../assets/header.jpg"></el-avatar>
+              <img src="../assets/header.jpg"/>
             </div>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="a">退出</el-dropdown-item>
@@ -30,6 +30,8 @@
     <my-dialog :is-show="isShowAbout" @dialog-close="hideDialog('isShowAbout')">
       <div slot="title">
         关于
+
+
       </div>
       <div slot="content">
         <p>
@@ -50,7 +52,7 @@
         注册
       </div>
       <div slot="content">
-        <register-form @on-success="" @on-error=""></register-form>
+        <register-form @on-success="loginSuccess" @on-error=""></register-form>
       </div>
     </my-dialog>
   </div>
@@ -95,11 +97,17 @@
   .el-dropdown {
     div {
       outline: 0;
-      height:  @head-height;
+      height: @head-height;
 
       .el-avatar--circle {
         margin-top: 5px
       }
+    }
+    img {
+      width: @head-image-height;
+      height: @head-image-height;
+      border-radius: @head-image-height;
+      margin-top: (@head-height - @head-image-height)/2;
     }
   }
 
