@@ -1,6 +1,6 @@
 <template>
-  <div class="index-wrap">
-    <div class="index-left">
+  <myLayout>
+    <div slot="left">
       <div class="index-left-block">
         <h2>全部产品</h2>
         <my-product></my-product>
@@ -14,14 +14,15 @@
         </ul>
       </div>
     </div>
-    <div class="index-right">
+    <div slot="right">
       <slide-show :slides="slides" :inv="invTime"></slide-show>
       <my-board></my-board>
     </div>
-  </div>
+  </myLayout>
 </template>
 
 <script>
+  import myLayout from '../../components/layout.vue'
   import slideShow from './slideShow'
   import myProduct from './product'
   import myBoard from './board'
@@ -29,6 +30,7 @@
 
   export default {
     components: {
+      myLayout,
       slideShow,
       myProduct,
       myBoard
@@ -60,49 +62,32 @@
 </script>
 
 <style lang="less" scoped>
-  .index-wrap {
-    width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
 
-  .index {
-    &-left {
-      float: left;
-      width: 300px;
-      text-align: left;
-
-      &-block {
-        margin: 15px;
-        background: #fff;
-        box-shadow: 0 0 1px #ddd;
-        h2 {
-          background: #4fc08d;
-          color: #fff;
-          padding: 10px 15px;
-        }
-
-        h3 {
-          padding: 0 15px 5px 15px;
-          font-weight: bold;
-          color: #222;
-        }
-
-        ul {
-          padding: 20px 15px;
-        }
-
-        li {
-          padding: 10px 0;
-        }
-      }
+  .index-left-block {
+    margin: 15px;
+    background: #fff;
+    box-shadow: 0 0 1px #ddd;
+    h2 {
+      background: #4fc08d;
+      color: #fff;
+      padding: 10px 15px;
     }
 
-    &-right {
-      float: left;
-      width: calc(100% - 320px);
+    h3 {
+      padding: 0 15px 5px 15px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    ul {
+      padding: 20px 15px;
+    }
+
+    li {
+      padding: 10px 0;
     }
   }
+
   .new-item {
     display: inline-block;
     width: 230px;
