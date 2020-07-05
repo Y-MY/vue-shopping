@@ -18,7 +18,7 @@ export default new Router({
     {
       path: '/detail',
       component: DetailPage,
-     /* redirect: '/detail/analysis',*/
+      redirect: '/detail/analysis',
       children: [
         {
           path: 'analysis',
