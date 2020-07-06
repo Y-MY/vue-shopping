@@ -1,15 +1,13 @@
 <template>
-  <myLayout>
+  <myLayout >
     <div slot="left">
       <div class="product-board">
         <img :src="productIcon">
         <ul>
-          <router-link v-for="(item,index) in products" :to="{ path: item.path }" tag="li" active-class="active"
-                       :key="index">
+         <router-link v-for="(item,index) in products" :to="{ path: item.path }" tag="li" active-class="active" :key="index">
             {{ item.name }}
-
           </router-link>
-        </ul>
+         </ul>
       </div>
     </div>
     <div slot="right">
@@ -40,8 +38,7 @@
     },
     computed: {
       productIcon () {
-        //return this.$route.path?this.imgMap[this.$route.path]:require("../../assets/images/1.png")
-        return require("../../assets/images/1.png");
+        return this.imgMap[this.$route.path];
       }
     }
   }
@@ -51,6 +48,7 @@
   .product-board {
     background: #fff;
     padding: 20px 0;
+    margin: 0 15px;
   }
 
   .product-board ul {

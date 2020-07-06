@@ -2,7 +2,7 @@
   <div class="app-head">
     <div class="app-head-inner">
       <router-link :to="{path: '/'}" class="app-head-logo">
-        <img src="../assets/logo.png">
+        <img src="../../assets/logo.png">
         <div class="app-head-logo-title">vue-shopping</div>
       </router-link>
       <div class="app-head-nav">
@@ -18,7 +18,7 @@
           <!-- <img src="../assets/header.jpg" class="headerImage">-->
           <el-dropdown @command="handleCommand">
             <div>
-              <img src="../assets/header.jpg"/>
+              <img src="../../assets/header.jpg"/>
             </div>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="a">退出</el-dropdown-item>
@@ -30,8 +30,6 @@
     <my-dialog :is-show="isShowAbout" @dialog-close="hideDialog('isShowAbout')">
       <div slot="title">
         关于
-
-
       </div>
       <div slot="content">
         <p>
@@ -59,9 +57,9 @@
 </template>
 
 <script>
-  import myDialog from './myDialog';
-  import loginForm from './loginForm';
-  import registerForm from './registerForm';
+  import myDialog from '../../components/myDialog';
+  import loginForm from '../login/loginForm';
+  import registerForm from '../register/registerForm';
 
   export default {
     components: {myDialog, loginForm, registerForm},
@@ -92,7 +90,7 @@
   }
 </script>
 <style lang="less" scoped>
-  @import "../less/default";
+  @import "../../less/default";
 
   .el-dropdown {
     div {

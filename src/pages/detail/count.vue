@@ -10,7 +10,7 @@
                   产品类型：
               </div>
               <div class="sales-board-line-right">
-                  <v-chooser :selections="buyTypes"></v-chooser>
+                  <button-group :selections="buyTypes"></button-group>
               </div>
           </div>
           <div class="sales-board-line">
@@ -244,11 +244,11 @@
 </template>
 
 <script>
-import VSelection from '../../components/base/selection'
-import VChooser from '../../components/base/chooser'
+import VSelection from './components/selection'
+import ButtonGroup from './components/buttonGroup'
 export default {
   components: {
-    VChooser,
+    ButtonGroup,
     VSelection
   },
   data () {

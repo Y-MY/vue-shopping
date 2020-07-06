@@ -18,7 +18,7 @@
                   媒介：
               </div>
               <div class="sales-board-line-right">
-                  <v-mul-chooser :selections="versionList"></v-mul-chooser>
+                  <mul-button-group :selections="versionList"></mul-button-group>
               </div>
           </div>
           <div class="sales-board-line">
@@ -58,12 +58,12 @@
 </template>
 
 <script>
-import VCounter from '../../components/base/counter'
-import VMulChooser from '../../components/base/multiplyChooser'
+import VCounter from './components/counter'
+import MulButtonGroup from './components/mulButtonGroup'
 export default {
   components: {
     VCounter,
-    VMulChooser
+    MulButtonGroup
   },
   data () {
     return {

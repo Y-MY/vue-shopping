@@ -9,10 +9,6 @@
       <div class="sales-board-line">
         <div class="sales-board-line-left">
           购买数量：
-
-
-
-
         </div>
         <div class="sales-board-line-right">
           <v-counter @on-change="onParamChange('buyNum', $event)"></v-counter>
@@ -21,10 +17,6 @@
       <div class="sales-board-line">
         <div class="sales-board-line-left">
           产品类型：
-
-
-
-
         </div>
         <div class="sales-board-line-right">
           <v-selection :selections="buyTypes" @on-change="onParamChange('buyType', $event)"></v-selection>
@@ -33,45 +25,29 @@
       <div class="sales-board-line">
         <div class="sales-board-line-left">
           有效时间：
-
-
-
-
         </div>
         <div class="sales-board-line-right">
-          <v-chooser
+          <button-group
             :selections="periodList"
-            @on-change="onParamChange('period', $event)"></v-chooser>
+            @on-change="onParamChange('period', $event)"></button-group>
         </div>
       </div>
       <div class="sales-board-line">
         <div class="sales-board-line-left">
           产品版本：
-
-
-
-
         </div>
         <div class="sales-board-line-right">
-          <v-mul-chooser
+          <mul-button-group
             :selections="versionList"
-            @on-change="onParamChange('versions', $event)"></v-mul-chooser>
+            @on-change="onParamChange('versions', $event)"></mul-button-group>
         </div>
       </div>
       <div class="sales-board-line">
         <div class="sales-board-line-left">
           总价：
-
-
-
-
         </div>
         <div class="sales-board-line-right">
           {{ price }} 元
-
-
-
-
         </div>
       </div>
       <div class="sales-board-line">
@@ -79,10 +55,6 @@
         <div class="sales-board-line-right">
           <div class="button" @click="showPayDialog">
             立即购买
-
-
-
-
           </div>
         </div>
       </div>
@@ -132,18 +104,10 @@
       <bank-chooser @on-change="onChangeBanks"></bank-chooser>
       <div class="button buy-dialog-btn" @click="confirmBuy">
         确认购买
-
-
-
-
       </div>
     </my-dialog>
     <my-dialog :is-show="isShowErrDialog" @on-close="hideErrDialog">
       支付失败！
-
-
-
-
     </my-dialog>
     <check-order :is-show-check-dialog="isShowCheckOrder" :order-id="orderId"
                  @on-close-check-dialog="hideCheckOrder"></check-order>
@@ -151,20 +115,21 @@
 </template>
 
 <script>
-  import VSelection from '../../components/base/selection'
-  import VCounter from '../../components/base/counter'
-  import VChooser from '../../components/base/chooser'
-  import VMulChooser from '../../components/base/multiplyChooser'
+  import VSelection from './components/selection'
+  import VCounter from './components/counter'
+  import ButtonGroup from './components/buttonGroup'
+  import MulButtonGroup from './components/mulButtonGroup'
   import Dialog from '../../components/base/dialog'
   import BankChooser from '../../components/base/bankChooser'
   import CheckOrder from '../../components/base/checkOrder'
-/*  import _ from 'lodash'*/
+  import{versionList,periodList,buyTypes} from './data';
+  /*  import _ from 'lodash'*/
   export default {
     components: {
       VSelection,
       VCounter,
-      VChooser,
-      VMulChooser,
+      ButtonGroup,
+      MulButtonGroup,
       MyDialog: Dialog,
       BankChooser,
       CheckOrder
@@ -176,48 +141,9 @@
         versions: [],
         period: {},
         price: 0,
-        versionList: [
-          {
-            label: '客户版',
-            value: 0
-          },
-          {
-            label: '代理商版',
-            value: 1
-          },
-          {
-            label: '专家版',
-            value: 2
-          }
-        ],
-        periodList: [
-          {
-            label: '半年',
-            value: 0
-          },
-          {
-            label: '一年',
-            value: 1
-          },
-          {
-            label: '三年',
-            value: 2
-          }
-        ],
-        buyTypes: [
-          {
-            label: '入门版',
-            value: 0
-          },
-          {
-            label: '中级版',
-            value: 1
-          },
-          {
-            label: '高级版',
-            value: 2
-          }
-        ],
+        versionList: versionList,
+        periodList: periodList,
+        buyTypes: buyTypes,
         isShowPayDialog: false,
         bankId: null,
         orderId: null,

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  import MyHeader from './components/myHeader.vue';
-  import MyFooter from './components/myFooter.vue';
+  import MyHeader from './pages/header/myHeader.vue';
+  import MyFooter from './pages/footer/myFooter.vue';
 
   export default {
     name: 'App',

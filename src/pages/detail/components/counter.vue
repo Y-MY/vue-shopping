@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     fixNumber () {
-      let fix
+      let fix;
       if (typeof this.number === 'string') {
         fix = Number(this.number.replace(/\D/g, ''))
       }
