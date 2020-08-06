@@ -244,7 +244,7 @@
 </template>
 
 <script>
-import VSelection from './components/selection'
+import VSelection from '../../components/selection'
 import ButtonGroup from './components/buttonGroup'
 export default {
   components: {

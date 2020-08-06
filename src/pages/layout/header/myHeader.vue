@@ -2,7 +2,7 @@
   <div class="app-head">
     <div class="app-head-inner">
       <router-link :to="{path: '/'}" class="app-head-logo">
-        <img src="../../assets/logo.png">
+        <img src="../../../assets/logo.png">
         <div class="app-head-logo-title">vue-shopping</div>
       </router-link>
       <div class="app-head-nav">
@@ -12,13 +12,18 @@
           <li @click="showDialog('isShowReg')">注册</li>
           <li class="app-nav-pile">|</li>
           <li @click="showDialog('isShowAbout')">关于</li>
+          <li class="app-nav-pile">|</li>
+          <router-link :to="{path: '/productList'}">
+            <li>产品</li>
+          </router-link>
+
         </ul>
         <div class="app-nav-list" v-if="nickname!== ''">
           <span class="nickname"> {{ nickname }}</span>
           <!-- <img src="../assets/header.jpg" class="headerImage">-->
           <el-dropdown @command="handleCommand">
             <div>
-              <img src="../../assets/header.jpg"/>
+              <img src="../../../assets/header.jpg"/>
             </div>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="a">退出</el-dropdown-item>
@@ -57,9 +62,9 @@
 </template>
 
 <script>
-  import myDialog from '../../components/myDialog';
-  import loginForm from '../login/loginForm';
-  import registerForm from '../register/registerForm';
+  import myDialog from '../../../components/myDialog';
+  import loginForm from '../../login/loginForm';
+  import registerForm from '../../register/registerForm';
 
   export default {
     components: {myDialog, loginForm, registerForm},
@@ -90,7 +95,7 @@
   }
 </script>
 <style lang="less" scoped>
-  @import "../../less/default";
+  @import "../../../less/default";
 
   .el-dropdown {
     div {
@@ -101,6 +106,7 @@
         margin-top: 5px
       }
     }
+
     img {
       width: @head-image-height;
       height: @head-image-height;

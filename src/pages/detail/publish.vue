@@ -252,7 +252,7 @@
 </template>
 
 <script>
-import VSelection from './components/selection'
+import VSelection from '../../components/selection'
 import VCounter from './components/counter'
 import VMulChooser from './components/mulButtonGroup'
 export default {

@@ -43,7 +43,7 @@ export const newsList = [
     url: 'https://www.zhihu.com/'
   }
 ];
-export const versionList= [
+export const versionList = [
   {
     label: '客户版',
     value: 0
@@ -57,7 +57,7 @@ export const versionList= [
     value: 2
   }
 ];
-export const periodList= [
+export const periodList = [
   {
     label: '半年',
     value: 0
@@ -71,7 +71,7 @@ export const periodList= [
     value: 2
   }
 ];
-export const buyTypes=[
+export const buyTypes = [
   {
     label: '入门版',
     value: 0
@@ -83,5 +83,48 @@ export const buyTypes=[
   {
     label: '高级版',
     value: 2
+  }
+];
+
+export const banks = [
+  {
+    id: 201,
+    label: '招商银行',
+    name: 'zhaoshang'
+  },
+  {
+    id: 301,
+    label: '中国建设银行',
+    name: 'jianshe'
+  },
+  {
+    id: 601,
+    label: '浦发银行',
+    name: 'pufa'
+  },
+  {
+    id: 1101,
+    label: '交通银行',
+    name: 'jiaotong'
+  },
+  {
+    id: 101,
+    label: '中国工商银行',
+    name: 'gongshang'
+  },
+  {
+    id: 401,
+    label: '中国农业银行',
+    name: 'nongye'
+  },
+  {
+    id: 1201,
+    label: '中国银行',
+    name: 'zhongguo'
+  },
+  {
+    id: 501,
+    label: '中信银行',
+    name: 'zhongxin'
   }
 ];

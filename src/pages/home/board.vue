@@ -32,6 +32,15 @@
   .index-board-list {
     overflow: hidden;
   }
+  .index-board-button{
+    background: #4fc08d;
+    color: #fff;
+    width: 100px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+  }
 
   .index-board-item {
     float: left;

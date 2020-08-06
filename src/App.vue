@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%">
+  <div style="height: 100%" @click="resetComponent">
     <my-header></my-header>
     <div class="clear-position"></div>
     <keep-alive>
@@ -12,12 +12,18 @@
 </template>
 
 <script>
-  import MyHeader from './pages/header/myHeader.vue';
-  import MyFooter from './pages/footer/myFooter.vue';
+  import MyHeader from './pages/layout/header/myHeader.vue';
+  import MyFooter from './pages/layout/footer/myFooter.vue';
+  import {eventBus} from './eventBus';
 
   export default {
     name: 'App',
     components: {MyHeader, MyFooter},
+    methods: {
+      resetComponent() {
+        eventBus.$emit('reset-component')
+      }
+    }
   }
 </script>
 

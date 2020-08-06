@@ -32,7 +32,7 @@
 <style lang="less">
   .custom-dialog {
     .el-dialog__header {
-      background: #2196f3;
+      background: #4fc08d;
     }
 
     text-align: left;

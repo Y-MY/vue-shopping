@@ -1,13 +1,14 @@
 <template>
-  <myLayout >
+  <myLayout>
     <div slot="left">
       <div class="product-board">
         <img :src="productIcon">
         <ul>
-         <router-link v-for="(item,index) in products" :to="{ path: item.path }" tag="li" active-class="active" :key="index">
+          <router-link v-for="(item,index) in products" :to="{ path: item.path }" tag="li" active-class="active"
+                       :key="index">
             {{ item.name }}
           </router-link>
-         </ul>
+        </ul>
       </div>
     </div>
     <div slot="right">
@@ -21,11 +22,12 @@
 <script>
   import myLayout from '../../components/layout.vue';
   import {products} from './data';
+
   export default {
     components: {
       myLayout,
     },
-    data () {
+    data() {
       return {
         products: products,
         imgMap: {
@@ -37,7 +39,7 @@
       }
     },
     computed: {
-      productIcon () {
+      productIcon() {
         return this.imgMap[this.$route.path];
       }
     }
@@ -109,6 +111,12 @@
   .sales-board-line-right {
     display: inline-block;
     width: 75%;
+
+  }
+
+  .sales-board-line-right button {
+    background: #4fc08d;
+    color: #fff;
   }
 
   .sales-board-des {

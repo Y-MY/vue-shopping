@@ -1,7 +1,7 @@
 const jsonServer = require('json-server');
 
 var apiServer = jsonServer.create();
-var apiRouter = jsonServer.router('db.json');
+var apiRouter = jsonServer.router('data.json');
 var middlewares = jsonServer.defaults();
 apiServer.use(middlewares);
 apiServer.use('/api', apiRouter);

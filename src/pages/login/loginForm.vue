@@ -59,5 +59,9 @@
 </script>
 
 <style scoped>
+  .el-button--primary{
+    background: #4fc08d;
+    border-color:#4fc08d;
+  }
 
 </style>

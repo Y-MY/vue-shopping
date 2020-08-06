@@ -115,14 +115,14 @@
 </template>
 
 <script>
-  import VSelection from './components/selection'
+  import Dialog from '../../components/dialog'
+  import VSelection from '../../components/selection'
   import VCounter from './components/counter'
   import ButtonGroup from './components/buttonGroup'
   import MulButtonGroup from './components/mulButtonGroup'
-  import Dialog from '../../components/base/dialog'
-  import BankChooser from '../../components/base/bankChooser'
-  import CheckOrder from '../../components/base/checkOrder'
-  import{versionList,periodList,buyTypes} from './data';
+  import BankChooser from './components/bankChooser'
+  import CheckOrder from './components/checkOrder'
+  import {versionList, periodList, buyTypes} from './data';
   /*  import _ from 'lodash'*/
   export default {
     components: {
@@ -134,13 +134,13 @@
       BankChooser,
       CheckOrder
     },
-    data () {
+    data() {
       return {
         buyNum: 0,
         buyType: {},
         versions: [],
         period: {},
-        price: 0,
+        price: 100,
         versionList: versionList,
         periodList: periodList,
         buyTypes: buyTypes,
@@ -152,11 +152,11 @@
       }
     },
     methods: {
-      onParamChange (attr, val) {
-        this[attr] = val
+      onParamChange(attr, val) {
+        this[attr] = val;
         this.getPrice()
       },
-      getPrice () {
+      getPrice() {
         /* let buyVersionsArray = _.map(this.versions, (item) => {
          return item.value
          })*/
@@ -170,76 +170,71 @@
           buyType: this.buyType.value,
           period: this.period.value,
           version: buyVersionsArray.join(',')
-        }
+        };
         this.$http.post('/api/getPrice', reqParams)
           .then((res) => {
-            this.price = res.data.amount
+            let amount = 698;
+            this.price = amount;
+            //this.price = res.data.amount
           })
       }
       ,
-      showPayDialog()
-      {
+      showPayDialog() {
         this.isShowPayDialog = true
       }
       ,
-      hidePayDialog()
-      {
+      hidePayDialog() {
         this.isShowPayDialog = false
       }
       ,
-      hideErrDialog()
-      {
+      hideErrDialog() {
         this.isShowErrDialog = false
       }
       ,
-      hideCheckOrder()
-      {
+      hideCheckOrder() {
         this.isShowCheckOrder = false
       }
       ,
-      onChangeBanks(bankObj)
-      {
+      onChangeBanks(bankObj) {
         this.bankId = bankObj.id
       }
       ,
-      confirmBuy()
-      {
+      confirmBuy() {
         /* let buyVersionsArray = _.map(this.versions, (item) => {
          return item.value
          })*/
         let buyVersionsArray = this.versions.map((item) => {
           return item.value
-        })
+        });
         let reqParams = {
           buyNumber: this.buyNum,
           buyType: this.buyType.value,
           period: this.period.value,
           version: buyVersionsArray.join(','),
           bankId: this.bankId
-        }
+        };
         this.$http.post('/api/createOrder', reqParams)
           .then((res) => {
-            this.orderId = res.data.orderId
-            this.isShowCheckOrder = true
+            this.orderId = res.data.orderId;
+            this.isShowCheckOrder = true;
             this.isShowPayDialog = false
           }, (err) => {
-            this.isShowBuyDialog = false
+            this.isShowBuyDialog = false;
             this.isShowErrDialog = true
           })
       }
     },
-    mounted()
-    {
-      this.buyNum = 1
-      this.buyType = this.buyTypes[0]
-      this.versions = [this.versionList[0]]
-      this.period = this.periodList[0]
+    mounted() {
+      this.buyNum = 1;
+      this.buyType = this.buyTypes[0];
+      this.versions = [this.versionList[0]];
+      this.period = this.periodList[0];
       this.getPrice()
     }
   }
 </script>
 
-<style scoped>
+<style scoped lang="less">
   .buy-dialog-title {
     font-size: 16px;
     font-weight: bold;
@@ -265,5 +260,25 @@
     background: #4fc08d;
     color: #fff;
     border: 1px solid #4fc08d;
+  }
+
+  .sales-board-line-right {
+    .button {
+      background: #4fc08d;
+      color: #fff;
+      width: 100px;
+      padding: 10px 15px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  }
+
+  .buy-dialog-btn {
+    background: #4fc08d;
+    color: #fff;
+    width: 100px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
   }
 </style>
