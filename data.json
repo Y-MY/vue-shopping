@@ -65,7 +65,7 @@
   },
   "getPrice": {
     "buyNumber": 1,
-    "buyType": 1,
+    "buyType": 0,
     "period": 0,
     "version": "0"
   },

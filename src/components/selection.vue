@@ -37,7 +37,8 @@
       })
     },
     methods: {
-      toggleDrop() {
+      toggleDrop(event) {
+        event.stopPropagation();
         this.isDrop = !this.isDrop
       },
       chooseSelection(index) {
