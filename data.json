@@ -78,6 +78,9 @@
   },
   "checkOrder": {},
   "getOrderList": {
-    "userId": 123
+    "query": "",
+    "productId": 1,
+    "startDate": "",
+    "endDate": ""
   }
 }

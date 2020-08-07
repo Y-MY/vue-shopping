@@ -16,7 +16,10 @@
           <router-link :to="{path: '/productList'}">
             <li>产品</li>
           </router-link>
-
+          <li class="app-nav-pile">|</li>
+          <router-link :to="{path: '/orderList'}">
+            <li>订单</li>
+          </router-link>
         </ul>
         <div class="app-nav-list" v-if="nickname!== ''">
           <span class="nickname"> {{ nickname }}</span>
