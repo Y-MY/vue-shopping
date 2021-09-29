@@ -17,6 +17,10 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+## 启动项目
+1. npm i
+2. npm run dev
+
 ## 使用脚手架搭建项目
 1. 安装脚手架vue cli，输入```npm install vue-cli -g ```，
 输入vue -V查看是否下载成功，出现版本号则说明安装成功。

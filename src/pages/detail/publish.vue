@@ -48,9 +48,9 @@
           <div class="sales-board-line">
               <div class="sales-board-line-left">&nbsp;</div>
               <div class="sales-board-line-right">
-                  <div class="button">
-                    立即购买
-                  </div>
+                <div class="button" @click="showPayDialog">
+                  立即购买
+                </div>
               </div>
           </div>
       </div>
@@ -248,6 +248,9 @@
           </tbody>
       </table>
       </div>
+    <my-dialog :is-show="isShowPayDialog" @on-close="hidePayDialog">
+      购买成功！
+    </my-dialog>
   </div>
 </template>
 
@@ -255,11 +258,13 @@
 import VSelection from '../../components/selection'
 import VCounter from './components/counter'
 import VMulChooser from './components/mulButtonGroup'
+import Dialog from "../../components/dialog";
 export default {
   components: {
     VSelection,
     VCounter,
-    VMulChooser
+    VMulChooser,
+    MyDialog: Dialog,
   },
   data () {
     return {
@@ -302,12 +307,30 @@ export default {
           label: '专家版',
           value: 3
         }
-      ]
+      ],
+      isShowPayDialog: false,
+    }
+  },
+  methods: {
+    showPayDialog() {
+      this.isShowPayDialog = true
+    },
+    hidePayDialog() {
+      this.isShowPayDialog = false
     }
   }
 }
 </script>
 
-<style>
-
+<style scoped lang="less">
+.sales-board-line-right {
+  .button {
+    background: #4fc08d;
+    color: #fff;
+    width: 100px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
 </style>

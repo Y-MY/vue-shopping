@@ -40,9 +40,9 @@
           <div class="sales-board-line">
               <div class="sales-board-line-left">&nbsp;</div>
               <div class="sales-board-line-right">
-                  <div class="button">
-                    立即购买
-                  </div>
+                <div class="button" @click="showPayDialog">
+                  立即购买
+                </div>
               </div>
           </div>
       </div>
@@ -54,16 +54,21 @@
 作为预测分析领域的专家，埃里克·西格尔博士深谙预测分析界已经实现和正在发生的事情、面临的问题和将来可能的前景。在《大数据预测》一书中，他结合预测分析的应用实例，对其进行了深入、细致且全面的解读。
 关于预测分析，你想了解的全部，你的生活以及这个世界会因为预测分析改变到什么程度，《大数据预测》都会告诉你。</p>
       </div>
+    <my-dialog :is-show="isShowPayDialog" @on-close="hidePayDialog">
+      购买成功！
+    </my-dialog>
   </div>
 </template>
 
 <script>
 import VCounter from './components/counter'
 import MulButtonGroup from './components/mulButtonGroup'
+import Dialog from "../../components/dialog";
 export default {
   components: {
     VCounter,
-    MulButtonGroup
+    MulButtonGroup,
+    MyDialog: Dialog,
   },
   data () {
     return {
@@ -84,12 +89,30 @@ export default {
           label: '邮件',
           value: 3
         }
-      ]
+      ],
+      isShowPayDialog: false,
+    }
+  },
+  methods: {
+    showPayDialog() {
+      this.isShowPayDialog = true
+    },
+    hidePayDialog() {
+      this.isShowPayDialog = false
     }
   }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+.sales-board-line-right {
+  .button {
+    background: #4fc08d;
+    color: #fff;
+    width: 100px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
 </style>

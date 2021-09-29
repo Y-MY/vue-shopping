@@ -64,9 +64,9 @@
     "userId": 123123
   },
   "getPrice": {
-    "buyNumber": 1,
+    "buyNumber": 5,
     "buyType": 0,
-    "period": 0,
+    "period": 1,
     "version": "0"
   },
   "createOrder": {
@@ -78,9 +78,6 @@
   },
   "checkOrder": {},
   "getOrderList": {
-    "query": "",
-    "productId": 1,
-    "startDate": "",
-    "endDate": ""
+    "userId": 123
   }
 }
