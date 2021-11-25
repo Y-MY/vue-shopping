@@ -56,3 +56,4 @@ npm install less-loader@5.0.0 --save-dev
 <style lang="less" scoped>
 </style>
 ```
+
